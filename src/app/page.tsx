@@ -7,7 +7,8 @@ import { aboutMe } from "@/data/aboutme";
 import { NewsEntry } from "@/components/news-entry";
 import { newsData } from "@/data/news";
 import { ExperienceEntry } from "@/components/experience-entry";
-import { experienceData } from "@/data/experience";
+import { researchExperienceData } from "@/data/experience";
+import { workExperienceData } from "@/data/experience";
 import { PortfolioEntry } from "@/components/portfolio-entry";
 import { portfolioData } from "@/data/portfolio";
 import { sectionOrder, Section } from "@/data/section-order";
@@ -95,15 +96,33 @@ export default function Home() {
                       </section>
                     )
                   );
-                case Section.Experience:
+                case Section.ResearchExperience:
                   return (
-                    experienceData.length > 0 && (
+                    researchExperienceData.length > 0 && (
                       <section key={sectionName}>
                         <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
                           Experience
                         </h2>
                         <div className="space-y-12">
-                          {experienceData.map((experience, index) => (
+                          {researchExperienceData.map((experience, index) => (
+                            <ExperienceEntry
+                              key={index}
+                              experience={experience}
+                            />
+                          ))}
+                        </div>
+                      </section>
+                    )
+                  );
+                case Section.WorkExperience:
+                  return (
+                    workExperienceData.length > 0 && (
+                      <section key={sectionName}>
+                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
+                          Experience
+                        </h2>
+                        <div className="space-y-12">
+                          {workExperienceData.map((experience, index) => (
                             <ExperienceEntry
                               key={index}
                               experience={experience}
