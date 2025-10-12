@@ -17,14 +17,6 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
         </div>
       )}
       <div className="flex flex-col flex-1">
-        {/*portfolio.award && (
-          <div className="group flex px-2 py-1 bg-gradient-to-r from-amber-50 to-rose-50 rounded-md items-center shadow-md border border-amber-100/50 relative overflow-hidden hover:rotate-1 transition-all duration-300">
-            <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/90 to-transparent" />
-            <p className="text-xs text-amber-700 font-medium relative">
-              {portfolio.award}
-            </p>
-          </div>
-        )*/}
         
         <h3 className="font-serif text-md mb-3">
           {portfolio.projectUrl ? (
@@ -57,9 +49,9 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
         )}
 
         {portfolio.award && (
-          <div className="inline-block relative px-2 py-1 bg-gradient-to-r from-amber-50 to-rose-50 rounded-md shadow-md border border-amber-100/50 overflow-hidden">
+          <div className="inline-block mb-2 relative rounded-md border border-amber-100/50 shadow-md overflow-hidden">
             <div className="absolute inset-0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/90 to-transparent" />
-            <p className="text-xs text-amber-700 font-medium relative">
+            <p className="text-xs text-amber-700 font-medium px-2 py-1 relative bg-gradient-to-r from-amber-50 to-rose-50 rounded-md">
               🏆 {portfolio.award}
             </p>
           </div>
