@@ -49,11 +49,12 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
         )}
 
         {portfolio.award && (
-          <div className="inline-flex mb-2 relative w-max">
-            <p className="relative text-xs text-amber-700 font-medium px-2 py-1 bg-gradient-to-r from-amber-50 to-rose-50 rounded-md border border-amber-100/50 shadow-md overflow-hidden">
-              <span className="absolute inset-0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/90 to-transparent" />
+          <div className="flex gap-2 mb-4 flex-wrap">
+            <span
+              className="text-xs text-zinc-600 px-2 py-1 bg-gradient-to-r from-amber-50 to-rose-50 rounded-full"
+            >
               🏆 {portfolio.award}
-            </p>
+            </span>
           </div>
         )}
 
