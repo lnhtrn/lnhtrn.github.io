@@ -31,15 +31,25 @@ export default function Home() {
           {/* Right Column - Scrolling Content */}
           <div className="col-span-12 md:col-span-7 md:col-start-6 space-y-24">
             {/* About section is typically first */}
-            {aboutMe.description && (
+            {/*aboutMe.description && (
               <section>
                 <p
                   className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
                   dangerouslySetInnerHTML={{ __html: aboutMe.description }}
                 />
               </section>
+            )*/}
+            {aboutMe.description && (
+              <section className="space-y-4">
+                {aboutMe.description.split('\n\n').map((paragraph, idx) => (
+                  <p
+                    key={idx}
+                    className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                ))}
+              </section>
             )}
-
             {/* Map through sectionOrder to render sections in correct order */}
             {sectionOrder.map((sectionName) => {
               // Most of this is redundant... but in case it needs to be unique.
