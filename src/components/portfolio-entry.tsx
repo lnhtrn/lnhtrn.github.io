@@ -25,14 +25,7 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
             </p>
           </div>
         )*/}
-        {portfolio.award && (
-          <div className="inline-block relative px-2 py-1 bg-gradient-to-r from-amber-50 to-rose-50 rounded-md shadow-md border border-amber-100/50 overflow-hidden">
-            <div className="absolute inset-0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/90 to-transparent" />
-            <p className="text-xs text-amber-700 font-medium relative">
-              🏆 {portfolio.award}
-            </p>
-          </div>
-        )}
+        
         <h3 className="font-serif text-md mb-3">
           {portfolio.projectUrl ? (
             <a
@@ -60,6 +53,15 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
                 {tech}
               </span>
             ))}
+          </div>
+        )}
+
+        {portfolio.award && (
+          <div className="inline-block relative px-2 py-1 bg-gradient-to-r from-amber-50 to-rose-50 rounded-md shadow-md border border-amber-100/50 overflow-hidden">
+            <div className="absolute inset-0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/90 to-transparent" />
+            <p className="text-xs text-amber-700 font-medium relative">
+              🏆 {portfolio.award}
+            </p>
           </div>
         )}
 
