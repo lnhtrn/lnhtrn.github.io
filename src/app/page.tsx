@@ -101,7 +101,7 @@ export default function Home() {
                     researchExperienceData.length > 0 && (
                       <section key={sectionName}>
                         <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
-                          Experience
+                          Research Experience
                         </h2>
                         <div className="space-y-12">
                           {researchExperienceData.map((experience, index) => (
@@ -119,7 +119,7 @@ export default function Home() {
                     workExperienceData.length > 0 && (
                       <section key={sectionName}>
                         <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
-                          Experience
+                          Work Experience
                         </h2>
                         <div className="space-y-12">
                           {workExperienceData.map((experience, index) => (
