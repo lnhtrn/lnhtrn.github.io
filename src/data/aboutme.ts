@@ -1,21 +1,5 @@
 import headshot from "../images/linh_headshot.jpeg";
 
-export const aboutMe: AboutMe = {
-  name: "Linh Tran",
-  title: "Masters of Science in Computer Science",
-  institution: "University of Rochester",
-  description: "your long description here...",
-  email: "ltran18@ur.rochester.edu",
-  imageUrl: linhHeadshot,
-  googleScholarUrl: "https://scholar.google.com/citations?user=bWtMl_MAAAAJ",
-  githubUsername: "lnhtrn",
-  linkedinUsername: "linh-ph-tran",
-  twitterUsername: "nothing",
-  blogUrl: "https://",
-  cvUrl: "https://",
-  institutionUrl: "https://www.rochester.edu/",
-};
-
 export interface AboutMe {
   name: string;
   title: string;
