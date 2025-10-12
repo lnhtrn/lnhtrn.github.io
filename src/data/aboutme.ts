@@ -1,5 +1,4 @@
 import headshot from "../images/linh_headshot.jpeg";
-cvUrl: "/Linh_Tran_CV.pdf",
 
 export const aboutMe: AboutMe = {
   name: "Linh Tran",
