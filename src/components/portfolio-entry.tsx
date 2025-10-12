@@ -17,11 +17,19 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
         </div>
       )}
       <div className="flex flex-col flex-1">
-        {portfolio.award && (
+        {/*portfolio.award && (
           <div className="group flex px-2 py-1 bg-gradient-to-r from-amber-50 to-rose-50 rounded-md items-center shadow-md border border-amber-100/50 relative overflow-hidden hover:rotate-1 transition-all duration-300">
             <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/90 to-transparent" />
             <p className="text-xs text-amber-700 font-medium relative">
               {portfolio.award}
+            </p>
+          </div>
+        )*/}
+        {portfolio.award && (
+          <div className="inline-block relative px-2 py-1 bg-gradient-to-r from-amber-50 to-rose-50 rounded-md shadow-md border border-amber-100/50 overflow-hidden">
+            <div className="absolute inset-0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/90 to-transparent" />
+            <p className="text-xs text-amber-700 font-medium relative">
+              🏆 {portfolio.award}
             </p>
           </div>
         )}
