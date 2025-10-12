@@ -31,7 +31,7 @@ export const aboutMe: AboutMe = {
   linkedinUsername: "linh-ph-tran",
   twitterUsername: "nothing",
   blogUrl: "https://",
-  cvUrl: "/data/Linh_Tran_CV.pdf",
+  cvUrl: "/data/Tran_Linh_CV.pdf",
   institutionUrl: "https://www.rochester.edu/",
   // altName: "",
   // secretDescription: "I like dogs.",
