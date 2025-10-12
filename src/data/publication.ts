@@ -17,7 +17,7 @@ export const publicationData: Publication[] = [
     year: "2025",
     conference: "Submitted to IEEE Big Data 2025",
     title: "Assessing Historical Structural Oppression Worldwide via Rule-Guided Prompting of Large Language Models",
-    authors: "Sreejato Chatterjee, <b>Linh Tran</b>, Quoc Duy Nguyen, Roni Kirson, Drue Hamlin, Harvest Aquino, Hanjia Lyu, Jiebo Luo, Timothy Dye",
+    authors: "Sreejato Chatterjee, Linh Tran, Quoc Duy Nguyen, Roni Kirson, Drue Hamlin, Harvest Aquino, Hanjia Lyu, Jiebo Luo, Timothy Dye",
     paperUrl: "https://arxiv.org/abs/2509.15216",
     codeUrl: "https://github.com/chattergpt/llm-oppression-benchmark",
     //bibtex: "https://arxiv.org/abs/2409.15476.bib",
