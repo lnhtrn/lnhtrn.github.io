@@ -7,7 +7,8 @@ import { aboutMe } from "@/data/aboutme";
 import { NewsEntry } from "@/components/news-entry";
 import { newsData } from "@/data/news";
 import { ExperienceEntry } from "@/components/experience-entry";
-import { experienceData } from "@/data/experience";
+import { researchExperienceData } from "@/data/experience";
+import { workExperienceData } from "@/data/experience";
 import { PortfolioEntry } from "@/components/portfolio-entry";
 import { portfolioData } from "@/data/portfolio";
 import { sectionOrder, Section } from "@/data/section-order";
@@ -30,15 +31,25 @@ export default function Home() {
           {/* Right Column - Scrolling Content */}
           <div className="col-span-12 md:col-span-7 md:col-start-6 space-y-24">
             {/* About section is typically first */}
-            {aboutMe.description && (
+            {/*aboutMe.description && (
               <section>
                 <p
                   className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
                   dangerouslySetInnerHTML={{ __html: aboutMe.description }}
                 />
               </section>
+            )*/}
+            {aboutMe.description && (
+              <section className="space-y-4">
+                {aboutMe.description.split('\n\n').map((paragraph, idx) => (
+                  <p
+                    key={idx}
+                    className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                ))}
+              </section>
             )}
-
             {/* Map through sectionOrder to render sections in correct order */}
             {sectionOrder.map((sectionName) => {
               // Most of this is redundant... but in case it needs to be unique.
@@ -95,15 +106,33 @@ export default function Home() {
                       </section>
                     )
                   );
-                case Section.Experience:
+                case Section.ResearchExperience:
                   return (
-                    experienceData.length > 0 && (
+                    researchExperienceData.length > 0 && (
                       <section key={sectionName}>
                         <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
-                          Experience
+                          Research Experience
                         </h2>
                         <div className="space-y-12">
-                          {experienceData.map((experience, index) => (
+                          {researchExperienceData.map((experience, index) => (
+                            <ExperienceEntry
+                              key={index}
+                              experience={experience}
+                            />
+                          ))}
+                        </div>
+                      </section>
+                    )
+                  );
+                case Section.WorkExperience:
+                  return (
+                    workExperienceData.length > 0 && (
+                      <section key={sectionName}>
+                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
+                          Work Experience
+                        </h2>
+                        <div className="space-y-12">
+                          {workExperienceData.map((experience, index) => (
                             <ExperienceEntry
                               key={index}
                               experience={experience}

@@ -17,6 +17,7 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
         </div>
       )}
       <div className="flex flex-col flex-1">
+        
         <h3 className="font-serif text-md mb-3">
           {portfolio.projectUrl ? (
             <a
@@ -44,6 +45,16 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
                 {tech}
               </span>
             ))}
+          </div>
+        )}
+
+        {portfolio.award && (
+          <div className="flex gap-2 mb-4 flex-wrap">
+            <span
+              className="text-xs text-zinc-600 px-2 py-1 bg-gradient-to-r from-amber-50 to-rose-50 rounded-full"
+            >
+              🏆 {portfolio.award}
+            </span>
           </div>
         )}
 

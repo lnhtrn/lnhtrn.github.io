@@ -35,7 +35,14 @@ export function PublicationEntry({
           )}
         </div>
         <h3 className="font-serif text-md mb-3">{publication.title}</h3>
-        <p className="text-sm text-zinc-600 mb-4">{publication.authors}</p>
+        <p className="text-sm text-zinc-600 mb-4">
+          {publication.authors
+            .split(", ")
+            .map((author: string, index: number) =>
+              author === "Linh Tran" ? <b key={index}>{author}</b> : author
+            )
+            .reduce<React.ReactNode[]>((prev, curr) => prev.length === 0 ? [curr] : [...prev, ", ", curr], [])}
+        </p>
         <div className="flex flex-row gap-6">
           {publication.paperUrl && (
             <a
