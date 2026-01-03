@@ -124,6 +124,21 @@ export default function Home() {
                       </section>
                     )
                   );
+                case Section.Portfolio:
+                  return (
+                    portfolioData.length > 0 && (
+                      <section key={sectionName}>
+                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
+                          Portfolio
+                        </h2>
+                        <div className="space-y-12">
+                          {portfolioData.map((portfolio, index) => (
+                            <PortfolioEntry key={index} portfolio={portfolio} />
+                          ))}
+                        </div>
+                      </section>
+                    )
+                  );
                 case Section.WorkExperience:
                   return (
                     workExperienceData.length > 0 && (
@@ -142,16 +157,19 @@ export default function Home() {
                       </section>
                     )
                   );
-                case Section.Portfolio:
+                case Section.WorkExperience:
                   return (
-                    portfolioData.length > 0 && (
+                    workExperienceData.length > 0 && (
                       <section key={sectionName}>
                         <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
-                          Portfolio
+                          Work Experience
                         </h2>
                         <div className="space-y-12">
-                          {portfolioData.map((portfolio, index) => (
-                            <PortfolioEntry key={index} portfolio={portfolio} />
+                          {workExperienceData.map((experience, index) => (
+                            <ExperienceEntry
+                              key={index}
+                              experience={experience}
+                            />
                           ))}
                         </div>
                       </section>

@@ -1,169 +1,83 @@
-import { EducationEntry } from "@/components/education-entry";
-import { educationData } from "@/data/education";
-import { PublicationEntry } from "@/components/publication-entry";
-import { publicationData } from "@/data/publication";
-import { ProfileSection } from "@/components/profile-section";
-import { aboutMe } from "@/data/aboutme";
-import { NewsEntry } from "@/components/news-entry";
-import { newsData } from "@/data/news";
-import { ExperienceEntry } from "@/components/experience-entry";
-import { researchExperienceData } from "@/data/experience";
-import { workExperienceData } from "@/data/experience";
-import { PortfolioEntry } from "@/components/portfolio-entry";
-import { portfolioData } from "@/data/portfolio";
-import { sectionOrder, Section } from "@/data/section-order";
+import Link from "next/link"
+import { ProfileSection } from "@/components/profile-section"
+import { aboutMe } from "@/data/aboutme"
 
-export default function Home() {
+export default function AdhdAssistPage() {
   return (
     <div className="min-h-screen bg-[#FFFCF8]">
-      {/* Don't have a great call on whether max-w-screen-xl is better */}
       <div className="max-w-screen-lg mx-auto px-8 py-24">
-        {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
-          {/* Left Column - Fixed Info */}
+          
+          {/* Left column */}
           <div className="col-span-12 md:col-span-4 space-y-12 mb-8 md:mb-0">
-            {/* Profile */}
             <div className="md:sticky top-12 space-y-8">
               <ProfileSection aboutMe={aboutMe} />
+
+              <Link
+                href="/"
+                className="text-sm font-serif underline text-zinc-700 hover:text-zinc-900"
+              >
+                ← Back to home
+              </Link>
             </div>
           </div>
 
-          {/* Right Column - Scrolling Content */}
-          <div className="col-span-12 md:col-span-7 md:col-start-6 space-y-24">
-            {/* About section is typically first */}
-            {/*aboutMe.description && (
-              <section>
-                <p
-                  className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
-                  dangerouslySetInnerHTML={{ __html: aboutMe.description }}
+          {/* Right column */}
+          <div className="col-span-12 md:col-span-7 md:col-start-6 space-y-16">
+            
+            <section className="space-y-4">
+              <h1 className="font-serif text-2xl tracking-wide">
+                ADHD-Assist: AR Housework Assistant for Executive Dysfunction
+              </h1>
+
+              <p className="font-serif text-sm text-zinc-700 leading-relaxed">
+                A mixed reality system designed to support individuals with ADHD by providing context-aware task prompts during household chores.
+              </p>
+            </section>
+
+            {/* Video */}
+            <section className="space-y-4">
+              <div className="aspect-video w-full">
+                <iframe
+                  className="w-full h-full rounded-sm"
+                  src="https://www.youtube.com/embed/VIDEO_ID"
+                  title="Project presentation"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
-              </section>
-            )*/}
-            {aboutMe.description && (
-              <section className="space-y-4">
-                {aboutMe.description.split('\n\n').map((paragraph, idx) => (
-                  <p
-                    key={idx}
-                    className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
-                    dangerouslySetInnerHTML={{ __html: paragraph }}
-                  />
-                ))}
-              </section>
-            )}
-            {/* Map through sectionOrder to render sections in correct order */}
-            {sectionOrder.map((sectionName) => {
-              // Most of this is redundant... but in case it needs to be unique.
-              switch (sectionName) {
-                case Section.News:
-                  return (
-                    newsData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="font-serif text-l mb-12 tracking-wide uppercase">
-                          News
-                        </h2>
-                        <div className="space-y-12">
-                          {newsData.map((news, index) => (
-                            <div key={index}>
-                              <NewsEntry news={news} />
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.Education:
-                  return (
-                    educationData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="font-serif text-zinc-700 mb-12 tracking-wide uppercase">
-                          Education
-                        </h2>
-                        <div className="space-y-12">
-                          {educationData.map((education, index) => (
-                            <EducationEntry key={index} education={education} />
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.Publication:
-                  return (
-                    publicationData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="font-serif text-l mb-12 tracking-wide uppercase">
-                          Publications
-                        </h2>
-                        <div className="space-y-12">
-                          {publicationData.map((publication, index) => (
-                            <div key={index}>
-                              <PublicationEntry publication={publication} />
-                              {index < publicationData.length - 1 && (
-                                <div className="h-px bg-zinc-200 my-8" />
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.ResearchExperience:
-                  return (
-                    researchExperienceData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
-                          Research Experience
-                        </h2>
-                        <div className="space-y-12">
-                          {researchExperienceData.map((experience, index) => (
-                            <ExperienceEntry
-                              key={index}
-                              experience={experience}
-                            />
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.WorkExperience:
-                  return (
-                    workExperienceData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
-                          Work Experience
-                        </h2>
-                        <div className="space-y-12">
-                          {workExperienceData.map((experience, index) => (
-                            <ExperienceEntry
-                              key={index}
-                              experience={experience}
-                            />
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                case Section.Portfolio:
-                  return (
-                    portfolioData.length > 0 && (
-                      <section key={sectionName}>
-                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
-                          Portfolio
-                        </h2>
-                        <div className="space-y-12">
-                          {portfolioData.map((portfolio, index) => (
-                            <PortfolioEntry key={index} portfolio={portfolio} />
-                          ))}
-                        </div>
-                      </section>
-                    )
-                  );
-                default:
-                  return null;
-              }
-            })}
+              </div>
+            </section>
+
+            {/* Description */}
+            <section className="space-y-6">
+              <p className="font-serif text-sm text-zinc-700 leading-relaxed">
+                This project is an augmented reality housework assistant designed to support people with ADHD and other forms of executive dysfunction. The goal is to make everyday chores feel less overwhelming by providing gentle structure and guidance directly in the user’s environment.
+              </p>
+
+              <p className="font-serif text-sm text-zinc-700 leading-relaxed">
+                I chose this topic because many people with ADHD struggle with getting started on tasks or keeping track of what they’re doing, especially in cluttered spaces. Instead of adding more reminders or notifications, I wanted to create something that feels supportive and stays out of the way.
+              </p>
+
+              <p className="font-serif text-sm text-zinc-700 leading-relaxed">
+                The application frames chores as a kind of in-world quest system. Tasks appear as floating AR prompts that exist where the work actually happens, reducing the need to constantly check a phone or remember the next step. This keeps attention anchored to the space itself rather than a separate screen.
+              </p>
+
+              <p className="font-serif text-sm text-zinc-700 leading-relaxed">
+                The project was built for Snap Spectacles, chosen for their lightweight design and suitability for hands-free AR during real household activities. Wearing them feels natural and allows the interface to blend into the task instead of interrupting it.
+              </p>
+
+              <p className="font-serif text-sm text-zinc-700 leading-relaxed">
+                Over the course of development, the system evolved significantly. Early versions required users to manually define chore zones and label tasks. This was later replaced with a vision-based approach where the user simply captures an image of their space, and the system automatically generates a relevant task list. Building this pipeline helped me learn a lot about mixed reality interaction design, spatial UI, and connecting AR experiences with AI-driven systems. I also focused heavily on keeping the interface calm, clear, and non-overstimulating.
+              </p>
+
+              <p className="font-serif text-sm text-zinc-700 leading-relaxed">
+                The final prototype demonstrates AR task menus inside the environment and an automated process that transforms a room snapshot into actionable steps. At its core, the project aims to make housework feel less like an insurmountable barrier and more like a guided, manageable experience.
+              </p>
+            </section>
+
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
