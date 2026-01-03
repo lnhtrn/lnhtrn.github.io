@@ -22,7 +22,7 @@ export const portfolioData: Portfolio[] = [
     title: "AR Housework Assistant for Individuals with Executive Dysfunction",
     description: "Enabled context-aware task prompting for individuals with ADHD by integrating real-time object recognition into an Meta Quest 3S to reduce executive dysfunction during household chores.",
     technologies: ["C#", "Unity", "Sentis", "Python"],
-    projectUrl: "",
+    projectUrl: "/adhd-assist",
     imageUrl: "",
     codeUrl: "",
     award: ""
