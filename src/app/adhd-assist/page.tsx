@@ -40,7 +40,7 @@ export default function AdhdAssistPage() {
               <div className="aspect-video w-full">
                 <iframe
                   className="w-full h-full rounded-sm"
-                  src="https://youtu.be/qrlrOmUBG5g"
+                  src="https://www.youtube.com/embed/qrlrOmUBG5g" 
                   title="Project presentation"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
