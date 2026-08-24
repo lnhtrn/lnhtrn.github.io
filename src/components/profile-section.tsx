@@ -4,6 +4,7 @@ import {
   Linkedin,
   Mail,
   ArrowUpRight,
+  GraduationCap,
 } from "lucide-react";
 import { AboutMe } from "@/data/aboutme";
 
