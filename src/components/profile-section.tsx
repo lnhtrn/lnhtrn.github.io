@@ -96,7 +96,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             <Mail size={14} />
             {aboutMe.email}
           </a>
-          {/* {aboutMe.googleScholarUrl && (
+          {{aboutMe.googleScholarUrl && (
             <>
               <br />
               <a
@@ -109,20 +109,21 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
                 Google Scholar
               </a>
             </>
-          )} */}
-          {/* {aboutMe.twitterUsername && (
+          )}}
+          {{aboutMe.orcidUrl && (
             <>
               <br />
               <a
-                href={`https://twitter.com/${aboutMe.twitterUsername}`}
+                href={aboutMe.orcidUrl}
                 className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter size={14} />@{aboutMe.twitterUsername}
+                <GraduationCap size={14} />
+                ORCID
               </a>
             </>
-          )} */}
+          )}}
           {aboutMe.githubUsername && (
             <>
               <br />
