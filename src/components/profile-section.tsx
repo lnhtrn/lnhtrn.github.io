@@ -96,11 +96,11 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             <Mail size={14} />
             {aboutMe.email}
           </a>
-          {{aboutMe.googleScholarUrl && (
+          {aboutMe.googleScholarUrl && (
             <>
               <br />
               <a
-                href={aboutMe.googleScholarUrl}
+                href={`https://${aboutMe.googleScholarUrl}`}
                 className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -109,12 +109,12 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
                 Google Scholar
               </a>
             </>
-          )}}
-          {{aboutMe.orcidUrl && (
+          )}
+          {aboutMe.orcidUrl && (
             <>
               <br />
               <a
-                href={aboutMe.orcidUrl}
+                href={`https://${aboutMe.orcidUrl}`}
                 className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -123,7 +123,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
                 ORCID
               </a>
             </>
-          )}}
+          )}
           {aboutMe.githubUsername && (
             <>
               <br />
